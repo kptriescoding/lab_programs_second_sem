@@ -39,7 +39,7 @@ int main()
 }
 void Enqueue(char a[])
 {
-	if((q.rear==SIZE-1&&q.front==0)||(q.front==q.rear+1))
+	if(q.front==(q.rear+1)%SIZE)
 		printf("\nQueue is Full!!!Insertion Not Possible\n");
 	else {
 		if(q.front==-1)
@@ -68,8 +68,8 @@ void display(){
 printf("\nQueue is Empty!!!");
 	else{
 		printf("\nThe Messages in the Queue are\n");
-		int i=q.front;
-		if(q.front<=q.rear)
+		int i;
+		/*if(q.front<=q.rear)
 		{
 			for (i=q.front;i<=q.rear;i++)
 				printf("\n%s",q.CQueue[i]);
@@ -79,7 +79,10 @@ printf("\nQueue is Empty!!!");
 				printf("\n%s",q.CQueue[i]);
 			for (i=0;i<=q.rear;i++)
 				printf("\n%s",q.CQueue[i]);
-		}
+		}*/
+		for(i=q.front;i!=(q.rear)%SIZE;i=(i+1)%SIZE)
+		printf("\n%s",q.CQueue[i]);
+		printf("\n%s",q.CQueue[i]);
 	}
 		
 }
