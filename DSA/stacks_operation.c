@@ -32,16 +32,12 @@ int main()
         //FInding the topmost third variable
         case 1:
             n = stack1.top + 1;
-            for (i = n - 1; i > n - 3; i--)
-            {
+            for (i = 0; i <2; i++)
                 push(&temp, pop(&stack1));
-            }
             t1 = pop(&stack1);
             push(&stack1, t1);
-            for (int i = 1; i > -1; i--)
-            {
+            for (int i = 0; i <2; i++)
                 push(&stack1, pop(&temp));
-            }
             printf("\nThe third element from the top is %d\n", t1);
             printf("\nThe original stack is\n");
             print_stack(&stack1);
@@ -55,16 +51,13 @@ int main()
                 printf("\nThe value of n is too much please try again\n");
                 scanf("%d", &n1);
             }
-            n = stack1.top + 1;
-            for (i = n - 1; i >= n - n1; i--)
-            {
+            for (i = 0; i <n1; i++)
                 push(&temp, pop(&stack1));
-            }
             printf("\nThe remaining stack is\n");
             print_stack(&stack1);
             printf("\nThe popped elements are\n");
             print_stack(&temp);
-            for (i = i + 1; i < n; i++)
+            for (i = 0; i < n1; i++)
             {
                 push(&stack1, pop(&temp));
             }
@@ -74,16 +67,12 @@ int main()
         //FInding the bottommost third variable
         case 3:
             n = stack1.top + 1;
-            for (i = n - 1; i > 2; i--)
-            {
+            for (i = 0; i <n-3; i++)
                 push(&temp, pop(&stack1));
-            }
             t2 = pop(&stack1);
             push(&stack1, t2);
-            for (int i = 3; i < n; i++)
-            {
+            for (int i = 0; i < n-3; i++)
                 push(&stack1, pop(&temp));
-            }
             printf("\nThe third element from the bottom is %d\n", t2);
             printf("\nThe original stack is\n");
             print_stack(&stack1);
